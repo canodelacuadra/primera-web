@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang='es'>
+  <head>
+
+    <!--
+
+     Objetivos de la actividad:
+        -Cambiar la fuente de  las  imágenes
+        -Cambiar el texto
+        -Asignación de clases en los atributos
+        -Copiar nodos html
+    -->
+
+    <!-- 
+    En este proyecto se puede crear tu propia tira cómica utilizando y Fotos cuadradas tiene - entonces ¿por qué no usar las fotos de tu cuenta de Instagram o de Facebook?  Tendrás
+    ser capaz de añadir imágenes, agregar, copiar en leyendas y globos de la historia.  También aprenderemos cómo hacer más escenas mediante la adición de las más viñetas al comic.
+    -->
+
+  <!--
+    Vamos a empezar.
+
+    1) LEER LOS COMENTARIOS. Esto es un comentario. Todo dentro de la etiqueta de comentarios de HTML o  con los signos' /* */' en lenguaje de estilos  CSS, 
+	no se procesa como código, pero aparecen en el  sobre el código. 
+	Para este proyecto, los comentarios los usaremos para  dar instrucciones, consejos y guías para completar el proyecto, 
+	así que debemos leer todos los comentarios que nos encontremos para obtener una comprensión de las tareas que se nos ha pedido  hacer.
+    2) HABITUARNOS Y  ORIENTARNOS DENTRO EL CÓDIGO.
+     HTML se compone de etiquetas que este aspecto<p> </p>.
+	Las etiquetas te dicen algo sobre la información contenida dentro de las mismas. 
+  -->
+
+
+
+    <title>Un comic en html</title>
+	<meta charset='utf-8'>
+
+  <!-- Este es el estilo para el comic -->
+  <style>
+       /* Esto es un comentario CSS*/
+          /*  CSS sirve para dar estilo */
+               /*  en principio no lo vamos a trabajar aunque podemos echarle un vistazo */
+    body {
+      background-color:#EFEFEF;
+      font-family:"Comic Sans MS", sans-serif;
+      line-height:1.2;
+      text-align: center;
+      padding: 1em 0 0 20px;
+    }
+    h1 {
+      text-transform: uppercase;
+      text-shadow: 4px 4px 0px black;
+      font-size:40px;
+      color:orange;
+    }
+    .comic {
+      max-width:826px;
+      margin:60px auto 0;
+    }
+    .scene {
+      width: 250px;
+      height:250px;
+      border:3px solid black;
+      background: #fff;
+      margin:8px;
+      display: inline-block;
+      position: relative;
+    }
+    .scene img {
+      width:100%;
+      height:100%;
+      display: block;
+    }
+    .caption {
+      padding:10px;
+      margin:0;
+      position: absolute;
+      left:0;
+      right:0;
+      background:#e2e971;
+      text-align:left;
+      top:0;
+    }
+    .caption.bottom {
+      bottom:0;
+      top:auto;
+      border-top:2px solid black;
+    }
+    .caption.top {
+      top:0;
+       border-bottom:2px solid black;
+    }
+    .speech {
+      width:40%;
+      border-radius:50%;
+      border:2px solid black;
+      margin:0;
+      position: absolute;
+      z-index:1;
+      background: Snow ;
+      padding:20px;
+      top:-15px;
+      text-align: center;
+    }
+ 
+    /* CSS avanzado para la orientación de los globos con respecto al personaje*/
+    .speech:after {
+      border-color: snow transparent;
+      border-style: solid;
+      border-width: 13px 13px 0;
+      bottom: -11px;
+      content: "";
+      display: block;
+      left: 50%;
+      margin-left:-14px;
+      position: absolute;
+      width: 0;
+    }
+    .speech:before {
+      border-color: black transparent;
+      border-style: solid;
+      border-width: 16px 16px 0;
+      bottom: -15px;
+      content: "";
+      display: block;
+      left: 50%;
+      margin-left:-17px;
+      position: absolute;
+      width: 0;
+    }
+    .speech.left {
+      left:-15px;
+    }
+    .speech.right {
+      right:-15px;
+    }
+
+    footer {
+      clear:both;
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- 
+    Tarea 1: 
+Primero, ¿por qué no cambiar el encabezado <h1> para dar al cómic un nombre más apropiado.  
+Cualquier texto que va entre las etiquetas <h1> y </h1> se convertirá en el título.</h1>  -->
+  <h1>Una gran fantasía</h1>
+  <h2>Todo puede ser fruto de nuestra imaginación </h2>
+
+  <p>Aprendiendo los lenguajes de la web... </p>
+
+  <!-- 
+  Aquí es donde comienza el cómic. 
+    El <div> con class 'comic'envuelve cada div 'escena  o viñeta ' y contiene a todas las escenas.</div>
+  -->
+  <div class="comic">
+
+      <!--
+        Tarea2
+        El  HTML  del div inferior es una escena de a comic.
+        Empiece por cambiar las imágenes de la escena con una de tus propias fotos.  
+        Como la escena es cuadrada una foto cuadrada funcionará mejor. ¿Por qué no obtener la url de la imagen de una de tus fotos de Instagram?   Cambiar el valor del atributo src de la etiqueta img que va entre las comillas dobles
+      -->
+      <div class="scene">
+        <p class="caption bottom">Un hecho insólito acaeció en el horizonte...</p>
+        <p class="speech right">¡Mira...! ¿Es un avión?</p>
+        <img src="" alt="" />
+      </div>
+
+       <!-- 
+    ¡ Magnífico! Ahora veamos algunos globos y leyendas incorporados en  otras escenas.
+
+Tarea 3:
+        Ver la primera escena anterior.  Tiene un título y un bocadillo de diálogo.
+        Copiando el párrafo del discurso<p>, adicione una burbuja del discurso de la segunda escena más abajo y luego cambiar su texto.
+      -->
+      <div class="scene">
+        <p class="caption top">.. Libardo no lo podia creer.</p>
+        <img src="http://farm7.staticflickr.com/6022/5918997962_f472e3ab8f.jpg" alt="" />
+      </div>
+
+      <!-- 
+       Dependiendo de la foto usemos, es posible que desee mover los subtítulos a la 'parte superior' o la 'inferior',
+         o el globo de diálogo "izquierda o derecha".
+
+         Tarea 4:
+         Mira la cuarta escena a continuación. Tiene un bocadillo en el lado izquierdo.
+         Cambie el nombre de la clase "left" a "right" para que el bocadillo se mueva hacia el lado derecho.
+         Si desea que una leyenda esté en la parte superior, nos aseguramos  de que tenga la clase 'top', si lo deseamos en la parte inferior, asegúrese de que tenga la clase 'bottom'. Podemos hacer este cambio en la escena o viñetas
+      -->
+      <div class="scene">
+        <p class="speech left">¡Serán imbéciles! No saben que...</p>
+        <img src="http://farm1.staticflickr.com/184/423566194_4513adf82d.jpg" alt="" />
+      </div>
+
+      <div class="scene">
+        <p class="speech right">Cualquier cosa es posible ser simulado...</p>
+        <img src="http://farm9.staticflickr.com/8290/7762873604_216c58c99e.jpg" alt="" />
+      </div>
+      
+      <div class="scene">
+        <p class="speech right"> mediante HTML, CSS, Javascript y conseguiremos que ...</p>
+        <img src="http://farm8.staticflickr.com/7289/8735312953_992e5a8b8f.jpg" alt="" />
+      </div>
+
+      <div class="scene">
+        <p class="caption bottom">todo sea producto de nuestra imaginación</p>
+        <img src="http://farm7.staticflickr.com/6231/6315319040_ece0b381a2.jpg" alt="" />
+      </div>
+
+       <!-- 
+        ¿ Este es el final del cómic :( ?
+        ¿Queremos crear a un cómic más grande?
+
+        Tarea 5:
+        Copiar el código HTML de tres 'escena' y pegar por debajo de este comentario... ahora tenemos 3 escenas más en nuestro comic ;)
+      -->
+
+  </div><!-- atención este es el div de la clase comic -->
+
+  
+  
+
+
+
+  <footer>
+    <p> Docente: José Antonio Cano de la Cuadra</p>
+      <!-- Créditos  para imágenes -->
+   <p> Todas las imágenes tomadas de <a href="http://flickr.com">flickr.com</a></p>
+  </footer>
+
+</body>
+</html>
